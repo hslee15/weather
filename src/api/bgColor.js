@@ -6,11 +6,11 @@ export const getColorByWeatherId = (weatherId) => {
 
     switch (group) {
         case 2: // 뇌우: 어두운 하늘 + 인디고 번쩍
-            return 'linear-gradient(180deg,rgba(8, 0, 0, 1) 0%, rgba(0, 115, 255, 1) 70%)';
+            return 'linear-gradient(180deg,rgba(8, 0, 0, 1) 0%, rgba(15, 73, 143, 1) 70%)';
         case 3: // 이슬비: 옅은 청록 → 연한 하늘
-            return 'linear-gradient(180deg,rgba(0, 60, 77, 1) 9%, rgba(66, 157, 255, 1) 70%)';
+            return 'linear-gradient(180deg,rgba(0, 60, 77, 1) 9%, rgba(66, 157, 255, 0.68) 70%)';
         case 5: // 비: 블루 톤 딥 → 라이트
-            return 'linear-gradient(180deg,rgba(77, 77, 77, 1) 9%, rgba(33, 134, 196, 1) 70%)';
+            return 'linear-gradient(180deg,rgba(77, 77, 77, 1) 9%, rgba(60, 143, 195, 1) 70%)';
         case 6: // 눈: 화이트에 살짝 아이스블루
             return 'linear-gradient(180deg,rgba(128, 128, 128, 1) 13%, rgba(158, 158, 114, 1) 59%)';
         case 7: // 안개/먼지: 소프트 그레이 → 블루그레이
