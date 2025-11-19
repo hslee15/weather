@@ -25,8 +25,8 @@ const WeatherCard = ({ weather }) => {
 
             </div>
             <p>{description}</p>
-            <p>🌡️ {Math.round(temp)}℃</p>
-            <p>💧 {humidity}%</p>
+            <p>{Math.round(temp)}</p>
+            <p>{humidity}%</p>
 
         </div>
     )

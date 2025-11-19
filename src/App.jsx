@@ -22,7 +22,6 @@ function App() {
     const q = city.trim()
     if(!q) return
 
-
     try {
       setLoading(true)
       setErr('')
@@ -35,7 +34,10 @@ function App() {
       setCity('')
 
     } catch (error) {
-      console.log(error)
+      console.error('날씨 검색 오류:', error)
+      const errorMessage = error.response?.data?.message || error.message || '날씨 정보를 가져오는 중 오류가 발생했습니다.'
+      setErr(errorMessage)
+      setWeather(null)
     }finally{
       setLoading(false)
     }
