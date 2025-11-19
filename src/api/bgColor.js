@@ -12,9 +12,9 @@ export const getColorByWeatherId = (weatherId) => {
         case 5: // 비: 블루 톤 딥 → 라이트
             return 'linear-gradient(180deg,rgba(77, 77, 77, 1) 9%, rgba(60, 143, 195, 1) 70%)';
         case 6: // 눈: 화이트에 살짝 아이스블루
-            return 'linear-gradient(180deg,rgba(128, 128, 128, 1) 13%, rgba(158, 158, 114, 1) 59%)';
+            return 'linear-gradient(180deg, #E0F7FA 0%, #FFFFFF 70%)';
         case 7: // 안개/먼지: 소프트 그레이 → 블루그레이
-            return 'linear-gradient(180deg,rgba(161, 161, 161, 1) 13%, rgba(235, 213, 148, 1) 53%)';
+            return 'linear-gradient(180deg, #BFC7CE 0%, #E4EBF0 80%)';
         case 8: // 구름: 라이트 슬레이트 → 미드 슬레이트
             return 'linear-gradient(180deg,rgba(161, 161, 161, 1) 41%, rgba(104, 160, 179, 1) 100%)';
         default: // 예외
