@@ -52,8 +52,10 @@ function App() {
   ? getColorByWeatherId(weather.weather[0].id): 'linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%)';
 
   return (
-    <section style={{ background: bg, minHeight: '100vh', transition: 'background .3s ease' }}>
-    <div className='app'>
+    <div
+      className="app"
+      style={{ background: bg, transition: 'background .3s ease' }}
+    >
       <h1>이현석의 날씨앱</h1>
       <div className="input-wrap">
         <input 
@@ -71,7 +73,6 @@ function App() {
       {loading && <p className='info'>불러오는중...</p>}
       <WeatherCard weather={weather}/>
     </div>
-    </section>
   )
 }
 

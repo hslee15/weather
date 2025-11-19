@@ -1,38 +1,109 @@
-.card{
-    text-align: center;
+/* PC 기본 스타일: 가로형 배치 */
+.card {
+    display: grid;
+    grid-template-columns: auto 1fr; /* [아이콘영역] [나머지 텍스트영역] */
+    gap: 0 50px; /* 아이콘과 텍스트 사이 간격 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 20px;
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    height: auto;
 }
-.card h2{
-    margin-bottom: 30px 0 10px;
-}
-.img-wrap{
-    width: 120px;
-    height: 120px;
+
+.img-wrap {
+    grid-column: 1;
+    grid-row: 1 / 5; /* 아이콘이 4줄(제목+설명+온도+습도) 높이를 모두 차지 */
+    width: 280px;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    background: #ff8c8c;
+    margin: 0;
     background: linear-gradient(180deg, rgba(255, 140, 140, 1) 21%, rgba(247, 204, 116, 1) 100%);
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
-    border-radius: 5px;
+    border-radius: 30px; /* 둥근 사각형 */
 }
-.card{
-    text-align: center;
-    padding-bottom: 30px;
+
+.img-wrap img {
+    width: 100%;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); /* 아이콘 그림자 추가 */
 }
-.card p{
-    margin: 6px 0;
-    color: black;
+
+/* 텍스트 정보들은 오른쪽 컬럼(2열)에 배치 */
+.card h2, .card p {
+    grid-column: 2;
 }
-.card p:nth-of-type(2){
-    font-size: 18px;
-    color: black;
+
+.card h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #222;
+    line-height: 1.2;
 }
-.card p:nth-of-type(1){
-    font-size: 32px;
+
+/* 날씨 설명 (맑음 등) */
+.card p:nth-of-type(1) {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* 온도 (가장 크게) */
+.card p:nth-of-type(2) {
+    font-size: 64px;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1;
+    margin: 10px 0 20px;
+    letter-spacing: -2px; /* 숫자 간격 좁게 */
 }
-.card p:nth-of-type(3){
+
+/* 습도 */
+.card p:nth-of-type(3) {
+    font-size: 30px;
     font-weight: 600;
+    color: #666;
+}
+
+
+/* ===== 모바일 반응형 (화면 폭 768px 이하) ===== */
+@media (max-width: 768px) {
+    .card {
+        display: flex;             /* Flexbox로 변경 */
+        flex-direction: column;    /* 세로 방향 정렬 */
+        align-items: center;       /* 가로 중앙 정렬 */
+        text-align: center;        /* 텍스트 중앙 정렬 */
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 10px;
+        margin: 10px auto;
+        gap: 10px;
+        height: auto;
+    }
+
+    .img-wrap {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 20px; /* 가운데 정렬 */
+        border-radius: 20px;  /* 모바일은 원형이 예쁨 */
+    }
+
+    .card h2 {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+    .card p:nth-of-type(1) {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .card p:nth-of-type(2) {
+        font-size: 56px;
+        margin: 10px 0;
+    }
 }
